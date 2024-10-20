@@ -70,6 +70,8 @@ const brandNameStyle = {
   marginLeft: '10px',
   fontSize: '1.5rem',
   fontWeight: 'bold',
+  color: '#fff',
+  fontFamily: 'Tahoma, sans-serif',
 };
 
 const searchBarStyle = {
