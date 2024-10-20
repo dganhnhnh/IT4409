@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -27,8 +27,26 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      
+      <div style={contentStyle}>
+        
+        <h2>Scroll down to see the sticky navbar in action!</h2>
+        {Array.from({ length: 50 }, (_, index) => (
+          <p key={index}>
+            This is a test paragraph number {index + 1}. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        ))}
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+const contentStyle = {
+  paddingTop: '80px', 
+  padding: '20px',
+  backgroundColor: '#0e172c',
+  minHeight: '200vh', 
+};
+
+export default App;
