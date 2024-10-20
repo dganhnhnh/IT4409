@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './global.css'
+import App from './containers/App.jsx'
+
 import Navbar from './navbar.jsx';
 
 
