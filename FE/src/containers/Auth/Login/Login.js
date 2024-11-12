@@ -57,9 +57,9 @@ const Login = (props) => {
                     theme: "colored",
                 });
                 if (data.user.role === true) {
-                    dispatch(actions.adminLoginSuccess(data.user));
+                    dispatch(actions.adminActions.adminLoginSuccess(data.user));
                 } else {
-                    dispatch(actions.userLoginSuccess(data.user));
+                    dispatch(actions.userActions.userLoginSuccess(data.user));
                     navigate('/home');
                     window.location.reload();
                 }
@@ -151,8 +151,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    userLoginSuccess: (userInfor) => dispatch(actions.userLoginSuccess(userInfor)),
-    adminLoginSuccess: (adminInfor) => dispatch(actions.adminLoginSuccess(adminInfor)),
+    userLoginSuccess: (userInfor) => dispatch(actions.userActions.userLoginSuccess(userInfor)),
+    adminLoginSuccess: (adminInfor) => dispatch(actions.adminActions.adminLoginSuccess(adminInfor)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
