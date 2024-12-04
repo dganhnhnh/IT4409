@@ -1,7 +1,7 @@
 {
   "name": "course-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "```bash\r     npm install\r ```",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,10 @@
   "dependencies": {
     "course-website": "file:",
     "dotenv": "^16.4.5",
-    "sequelize": "^6.37.4"
-  }
+    "express": "^4.21.1",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
+  },
+  "keywords": []
 }
