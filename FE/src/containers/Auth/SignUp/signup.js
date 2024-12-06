@@ -198,7 +198,7 @@ const SignUp = (props) => {
                         </form>
                         <div className="google-image col-5 offset-1">
                             <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" width="244" height="244" />
-                            <figcaption>CodeCrush. Không gian học lập trình, trao đổi học tập, kết nối tới mọi người.</figcaption>
+                            <figcaption>EduSmart. Không gian học lập trình, trao đổi học tập, kết nối tới mọi người.</figcaption>
                         </div>
                     </div>
                 </div>

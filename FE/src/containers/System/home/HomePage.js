@@ -10,7 +10,7 @@ const HomePage = () => {
                 <div id="homepage-logo-app">
                     <img src={`${process.env.PUBLIC_URL}/assets/img/logo-symbol.png`} alt="avatar" style={{ height: "40px", borderRadius: "50%" }} />
                     <div id="headerUser-left-logo-p">
-                        EduMaster
+                        EduSmart
                     </div>
                 </div>
                 <ul id="homepage-nav">
@@ -28,7 +28,7 @@ const HomePage = () => {
                         Học lập trình<br />mọi lúc,<br />mọi nơi!
                     </h1>
                     <p>
-                        Website học lập trình EduMaster - Học lập trình để đi làm.<br />BTL học phần Công nghệ Web & Dịch vụ trực tuyến nhóm xx.
+                        Website học lập trình EduSmart - Học lập trình để đi làm.<br />BTL học phần Công nghệ Web & Dịch vụ trực tuyến nhóm 11.
                     </p>
                     <Link to="/login">
                         <div id="homepage-login_button">

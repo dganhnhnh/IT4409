@@ -9,7 +9,6 @@ const adminService = {
      *  "username": "string",
      *  "password": "string"
      * }
-     * 123456
      */
     login(loginBody) {
         return axios.post(`/admin/login`, loginBody)

@@ -137,7 +137,7 @@ class BlogLeft extends Component {
                                             <a className="nav-link">Privacy & terms </a>
                                         </li>
                                     </ul>
-                                    <p className="small text-center mt-1">©2023 CodeCrush</p>
+                                    <p className="small text-center mt-1">©2023 EduSmart</p>
                                 </div>
                             </div>
                         </div>

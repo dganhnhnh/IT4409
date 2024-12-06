@@ -13,7 +13,7 @@ class Home extends Component {
             <Redirect to={linkToRedirect} />
             // <div>
             //     <HeaderAdmin />
-            //     Xin chào các bạn đến với CodeCrush
+            //     Xin chào các bạn đến với EduSmart
             // </div>
         );
     }

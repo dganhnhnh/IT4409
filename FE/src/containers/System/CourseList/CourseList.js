@@ -291,7 +291,7 @@ class CourseList extends Component {
                             <div>
                                 <div className="carousel-caption text-start">
                                     <h1>Khóa học Fullstack.</h1>
-                                    <p>Đây là khóa học chi tiết, đầy đủ nhất bạn có thể tìm thấy trên CodeCrush.</p>
+                                    <p>Đây là khóa học chi tiết, đầy đủ nhất bạn có thể tìm thấy trên EduSmart.</p>
                                     <Link to="/course/12" onClick={() => window.scrollTo(0, 0)}>
                                         <button className="button-registerCourse" >Đăng ký ngay</button>
                                     </Link>
@@ -326,7 +326,7 @@ class CourseList extends Component {
                             <div>
                                 <div className="carousel-caption text-start">
                                     <h1>Khóa học HTML CSS miễn phí.</h1>
-                                    <p>CodeCrush cung cấp cho học viên các kiến thức cơ bản về HTML/CSS/Website.</p>
+                                    <p>EduSmart cung cấp cho học viên các kiến thức cơ bản về HTML/CSS/Website.</p>
                                     <Link to="/course/4" onClick={() => window.scrollTo(0, 0)}>
                                         <button className="button-registerCourse" href="#">Đăng ký ngay</button>
                                     </Link>
@@ -391,7 +391,7 @@ class CourseList extends Component {
                                     <div className="col-lg-12">
                                         <div className="section-tittle text-center mb-40">
                                             <h2 className="display-2">Các bài viết nổi bật</h2>
-                                            <p>Tham gia trao đổi học tập cùng cộng đồng CodeCrush.</p>
+                                            <p>Tham gia trao đổi học tập cùng cộng đồng EduSmart.</p>
                                         </div>
                                     </div>
                                 </div>

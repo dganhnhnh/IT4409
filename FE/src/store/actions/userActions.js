@@ -1,27 +1,22 @@
 import actionTypes from './actionTypes';
 
-const addUserSuccess = () => ({
+export const addUserSuccess = () => ({
     type: actionTypes.ADD_USER_SUCCESS
 })
 
-const userLoginSuccess = (userInfo) => ({
+export const userLoginSuccess = (userInfo) => ({
     type: actionTypes.USER_LOGIN_SUCCESS,
     userInfo: userInfo
 })
-
-const updateUser = (userInfo) => ({
+export const updateUser = (userInfo) => ({
     type: actionTypes.UPDATE_USER,
     userInfo: userInfo
 })
 
-const userLoginFail = () => ({
+export const userLoginFail = () => ({
     type: actionTypes.USER_LOGIN_FAIL
 })
 
-const processLogout = () => ({
+export const processLogout = () => ({
     type: actionTypes.PROCESS_LOGOUT
 })
-
-export {
-    addUserSuccess, userLoginFail, userLoginSuccess, updateUser, processLogout
-}
