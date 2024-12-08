@@ -41,9 +41,17 @@ class Learn extends Component {
     userData = JSON.parse(localStorage.getItem("persist:user"));
     userInfo = JSON.parse(this.userData.userInfo);
     sumTimes(arr) {
+        console.log(arr);
         const totalSeconds = arr.reduce((total, time) => {
-            const [minutes, seconds] = time.duration.split(':').map(Number);
-            return total + minutes * 60 + seconds;
+            const timeArray = time.duration.split(':').map(Number);
+            let hour, min, sec;
+            if (timeArray.length === 3) {
+                [hour, min, sec] = timeArray;
+            } else {
+                [min, sec] = timeArray;
+                hour = 0;
+            }
+            return total + hour * 3600 + min * 60 + sec;
         }, 0);
 
         const hours = Math.floor(totalSeconds / 3600);
@@ -85,6 +93,7 @@ class Learn extends Component {
                 let arrOfListVideos = [];
 
                 const arrLessons = responseOfLesson.lessons.sort((a, b) => a.orderBy - b.orderBy);
+                if (arrLessons.length === 0) return;
                 const promises = arrLessons.map(async (lesson) => {
 
                     const responseVideosOfLesson = await getAllVideos(lesson.id);
@@ -135,10 +144,13 @@ class Learn extends Component {
                 console.log(lessons);
 
                 const listVideoCompleted = arrOfListVideos.filter(itemA => {
+                    if (!Array.isArray(progressCompleted)) {
+                        return false;
+                    }
                     return progressCompleted.some(itemB => {
                         return itemB.videoID === itemA.id;
-                    })
-                })
+                    });
+                });
                 const timeCompleted = this.sumTimes(listVideoCompleted);
 
                 const percentCompleted = Math.round(this.convertTimeToSeconds(timeCompleted) / this.convertTimeToSeconds(lessons.totalTime) * 100);
@@ -321,17 +333,17 @@ class Learn extends Component {
                         <YouTube videoId={videoShow} opts={opts}
                             onPlay={this.onPlay}
                             onPause={this.onPause} />
-                        <div>
+                        {/* <div>
                             {this.state.time} seconds
-                        </div>
+                        </div> */}
                         <div className='learn_body-footer d-flex'>
                             <div className='learn_body-footer-title'>
                                 <h4>{videoTitleShow}</h4>
                                 <p style={{ fontSize: "14px" }}>Cập nhật {moment(`${videoCreatedAt}`).format('HH:mm DD/MM/YYYY')}.</p>
                             </div>
-                            <div className='learn_body-note'>
+                            {/* <div className='learn_body-note'>
                                 <button><i className="bi bi-plus"></i> <span>Thêm ghi chú tại đây</span></button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className='col-3 learn_body-right'>
@@ -366,7 +378,7 @@ class Learn extends Component {
                                 }
 
                                 return (
-                                    <div>
+                                    <div key={index}>
                                         <div className='learn_body-right-lesson mt-3'>
                                             <div className='learn_body-right-lesson-title d-flex' onClick={() => this.handleClick(index)}>
                                                 <div className='col-11' style={{ lineHeight: "0.8" }}>
@@ -404,7 +416,7 @@ class Learn extends Component {
                                                     )
                                                 } else if (a + videoIndex + 1 == numberOfVideoCompleted + 1) {
                                                     return (
-                                                        <div className='list-video_title d-flex' style={{ lineHeight: "0.8" }}
+                                                        <div key={videoIndex} className='list-video_title d-flex' style={{ lineHeight: "0.8" }}
                                                             onClick={() => this.handleShowVideo(video.video_url, video.title, video.createdAt, videoIndex, index, video.id)}>
                                                             <div className='col-12'>
                                                                 <h6>{videoIndex + 1} {video.title}</h6>
@@ -435,7 +447,7 @@ class Learn extends Component {
                         </Scrollbars>
                     </div>
                 </div>
-                <div className='learn_footer'>
+                {/* <div className='learn_footer'>
                     <div className='lesson_pre'>
                         <i className="bi bi-chevron-left"></i>
                         <span>BÀI TRƯỚC</span>
@@ -444,7 +456,7 @@ class Learn extends Component {
                         <span style={{ marginLeft: "5px" }}>BÀI TIẾP THEO</span>
                         <i className="bi bi-chevron-right"></i>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }

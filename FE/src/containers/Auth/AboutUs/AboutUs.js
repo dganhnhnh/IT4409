@@ -6,10 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './AboutUs_style.scss';
 
 
-import img1 from './blank_avatar.jpg';
+import img1 from './DA.jpg';
 import img2 from './blank_avatar.jpg';
-import img3 from './blank_avatar.jpg';
-import img4 from './blank_avatar.jpg';
+import img3 from './NA.jpg';
+import img4 from './TA.jpg';
 
 class AboutUs extends Component {
 
