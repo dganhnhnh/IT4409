@@ -7,7 +7,7 @@
 ### Cài đặt
 
 ```bash
-    npm install
+    npm install --legacy-peer-deps
 ```
 
 ### Chạy

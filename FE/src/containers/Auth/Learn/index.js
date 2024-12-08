@@ -96,7 +96,7 @@ class Learn extends Component {
 
                     const promises = sortVideos.map((video) => {
                         // Khi naof be sửa thì xóa dòng 99
-                        video.video_url = 'abPmZCZZrFA';
+                        // video.video_url = 'abPmZCZZrFA';
                         const videoId = video.video_url;
                         const apiKey = process.env.REACT_APP_API_Key_Youtube;
                         const url = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoId}&key=${apiKey}`;
