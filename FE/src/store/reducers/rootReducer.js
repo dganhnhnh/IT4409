@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
+
 import appReducer from "./appReducer";
 import adminReducer from "./adminReducer";
 import userReducer from "./userReducer";
@@ -24,12 +26,16 @@ const userPersistConfig = {
     key: 'user',
     whitelist: ['isLoggedIn', 'userInfo']
 };
+// const coursePersistConfig = {
+//     ...persistCommonConfig,
+//     key: 'course',
+//     whitelist: ['arrLessons', 'arrCourses', 'isOpenModal', 'isOpenEditModal', 'isOpenModalLesson', 'isOpenEditModalLesson', 'courseId']
 
-const createRootReducer = () => combineReducers({
+// }
+export default (history) => combineReducers({
+    router: connectRouter(history),
     admin: persistReducer(adminPersistConfig, adminReducer),
     user: persistReducer(userPersistConfig, userReducer),
     app: appReducer,
-    course: courseReducer,
-});
-
-export default createRootReducer;
+    course: courseReducer
+})

@@ -13,6 +13,6 @@ export const adminLoginFail = () => ({
     type: actionTypes.ADMIN_LOGIN_FAIL
 })
 
-// export const processLogout = () => ({
-//     type: actionTypes.PROCESS_LOGOUT
-// })
+export const processLogout = () => ({
+    type: actionTypes.PROCESS_LOGOUT
+})

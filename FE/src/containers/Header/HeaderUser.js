@@ -1,34 +1,45 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
 import { adminMenu } from './menuApp';
 import './HeaderAdmin.scss';
 
-const HeaderUser = () => {
-    const dispatch = useDispatch();
-    const userInfo = useSelector((state) => state.user.userInfo);
+class HeaderUser extends Component {
 
-    const handleLogout = () => {
-        dispatch(actions.processLogout());
+    render() {
+        const { processLogout, userInfo } = this.props;
+        return (
+            <div className="header-container">
+                {/* thanh navigator */}
+                <div className="header-tabs-container">
+                    <Navigator menus={adminMenu} />
+                </div>
+                {/* <div>Xin chao</div> */}
+
+                {/* nút logout */}
+                {userInfo && userInfo.fullName ? <div>Xin chào {userInfo.fullName}</div> : ""}
+                <div className="btn btn-logout" onClick={processLogout}>
+                    <i className="fas fa-sign-out-alt"></i>
+                </div>
+            </div>
+        );
+    }
+
+}
+
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: state.user.isLoggedIn,
+        userInfo: state.user.userInfo
     };
-
-    return (
-        <div className="header-container">
-            {/* Thanh navigator */}
-            <div className="header-tabs-container">
-                <Navigator menus={adminMenu} />
-            </div>
-
-            {/* Lời chào người dùng */}
-            {userInfo && userInfo.fullName ? <div>Xin chào {userInfo.fullName}</div> : null}
-
-            {/* Nút logout */}
-            <div className="btn btn-logout" onClick={handleLogout}>
-                <i className="fas fa-sign-out-alt"></i>
-            </div>
-        </div>
-    );
 };
 
-export default HeaderUser;
+const mapDispatchToProps = dispatch => {
+    return {
+        processLogout: () => dispatch(actions.processLogout()),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderUser);

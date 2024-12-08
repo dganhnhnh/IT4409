@@ -500,7 +500,8 @@ class ListPost extends Component {
                             })
                         ) : (
                             <div className="text-center">
-                                <Spinner animation="border" variant="primary" />
+                                {/* <Spinner animation="border" variant="primary" /> */}
+                                <div>No post</div>
                             </div>
                         )}
                     </div>

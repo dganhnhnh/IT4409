@@ -60,6 +60,8 @@ class EnrollmentCourse extends Component {
         this.fetchData();
     }
     handleEnrollmentCourse = async () => {
+        console.log(this.props.match.params);
+        console.log(this.userInfo);
         const response = await enrrollmentCourse(this.props.match.params.id, this.userInfo.id);
         console.log(response);
         if (response && response.errCode === 0) {

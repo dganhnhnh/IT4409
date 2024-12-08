@@ -95,6 +95,8 @@ class Learn extends Component {
                     // }
 
                     const promises = sortVideos.map((video) => {
+                        // Khi naof be sửa thì xóa dòng 99
+                        video.video_url = 'abPmZCZZrFA';
                         const videoId = video.video_url;
                         const apiKey = process.env.REACT_APP_API_Key_Youtube;
                         const url = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoId}&key=${apiKey}`;
@@ -387,7 +389,7 @@ class Learn extends Component {
 
                                                 if (a + videoIndex + 1 < numberOfVideoCompleted + 1) {
                                                     return (
-                                                        <div className='list-video_title d-flex' style={{ lineHeight: "0.8" }}
+                                                        <div key={videoIndex} className='list-video_title d-flex' style={{ lineHeight: "0.8" }}
                                                             onClick={() => this.handleShowVideo(video.video_url, video.title, video.createdAt, videoIndex, index, video.id)}>
                                                             <div className='col-11'>
                                                                 <h6>{videoIndex + 1} {video.title}</h6>

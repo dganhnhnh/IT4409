@@ -69,6 +69,19 @@
     border-radius: 5px;
 }
 
+.ticket-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.ticket-list-item-name {
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .place-img {
     width: 100%;
     display: block;

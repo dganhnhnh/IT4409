@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './AboutUs_style.scss';
@@ -9,7 +10,6 @@ import img1 from './blank_avatar.jpg';
 import img2 from './blank_avatar.jpg';
 import img3 from './blank_avatar.jpg';
 import img4 from './blank_avatar.jpg';
-
 
 class AboutUs extends Component {
 
@@ -129,69 +129,80 @@ class AboutUs extends Component {
                         </div>
                     </section> */}
                     <div className="about-member">
-                        <div class="tour-section">
-                            <div class="content-section">
-                                <h2 class="section-heading text-white">CÁC THÀNH VIÊN</h2>
-                                <p class="section-sub-heading text-white">Nhóm 2 - lớp Công nghệ Web & Dịch vụ trực tuyến - 154054 - IT4409.</p>
+                        <div className="tour-section">
+                            <div className="content-section">
+                                <h2 className="section-heading text-white">CÁC THÀNH VIÊN</h2>
+                                <p className="section-sub-heading text-white">Nhóm 2 - lớp Công nghệ Web & Dịch vụ trực tuyến - 154054 - IT4409.</p>
 
-                                <ul class="ticket-list">
-                                    <li>1. Nguyễn Dương Ánh - 20210082 <span class="sold-out">Nhóm trưởng</span></li>
-                                    <li>2. Lê Hoàng Anh - 20215303 <span class="sold-out">Thành viên</span></li>
-                                    <li>3. Nguyễn Nam Anh - 20210036 <span class="sold-out">Thành viên</span></li>
-                                    <li>3. Nguyễn Tuấn Anh - 20215525 <span class="sold-out">Thành viên</span></li>
+                                <ul className="ticket-list">
+                                    <li className="ticket-list-item">
+                                        <div className='ticket-list-item-name'>1. Nguyễn Dương Ánh - 20210082</div>
+                                        <span className="sold-out">Nhóm trưởng</span>
+                                    </li>
+                                    <li className="ticket-list-item">
+                                        <div className='ticket-list-item-name'>2. Lê Hoàng Anh - 20215303</div>
+                                        <span className="sold-out">Thành viên</span>
+                                    </li>
+                                    <li className="ticket-list-item">
+                                        <div className='ticket-list-item-name'>3. Nguyễn Nam Anh - 20210036</div>
+                                        <span className="sold-out">Thành viên</span>
+                                    </li>
+                                    <li className="ticket-list-item">
+                                        <div className='ticket-list-item-name'>4. Nguyễn Tuấn Anh - 20215525</div>
+                                        <span className="sold-out">Thành viên</span>
+                                    </li>
                                 </ul>
 
-                                <div class="places-list">
+                                <div className="places-list">
 
-                                    <div class="place-item">
-                                        <img src={img1} alt="DoLV" class="place-img" />
-                                        <div class="place-body">
-                                            <h3 class="place-heading">Nguyễn Dương Ánh - 20210082</h3>
-                                            <p class="place-time">Nhóm trưởng</p>
-                                            <p class="place-desc">- Thiết kế cơ sở dữ liệu<br />- Thiết kế API<br />- Lập trình Backend</p>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="place-item">
-                                        <img src={img2} alt="DoLV" class="place-img" />
-                                        <div class="place-body">
-                                            <h3 class="place-heading">Lê Hoàng Anh - 20215303</h3>
-                                            <p class="place-time">Nhóm trưởng</p>
-                                            <p class="place-desc">- Thiết kế cơ sở dữ liệu<br />- Thiết kế API<br />- Lập trình Backend</p>
+                                    <div className="place-item">
+                                        <img src={img1} alt="img#1" className="place-img" />
+                                        <div className="place-body">
+                                            <h3 className="place-heading">Nguyễn Dương Ánh - 20210082</h3>
+                                            <p className="place-time">Nhóm trưởng</p>
+                                            <p className="place-desc">- Thiết kế cơ sở dữ liệu<br />- Thiết kế API<br />- Lập trình Backend</p>
 
                                         </div>
                                     </div>
 
-                                    <div class="place-item">
-                                        <img src={img3} alt="DiepVTB" class="place-img" />
-                                        <div class="place-body">
-                                            <h3 class="place-heading">Nguyễn Nam Anh - 20210036</h3>
-                                            <p class="place-time">Thành viên</p>
-                                            <p class="place-desc">- Thiết kế giao diện<br />- Lập trình giao diện<br />- Kiểm thử và tích hợp API</p>
+                                    <div className="place-item">
+                                        <img src={img2} alt="img#2" className="place-img" />
+                                        <div className="place-body">
+                                            <h3 className="place-heading">Lê Hoàng Anh - 20215303</h3>
+                                            <p className="place-time">Thành viên</p>
+                                            <p className="place-desc">- Thiết kế giao diện<br />- Lập trình giao diện<br />- Kiểm thử và tích hợp API</p>
 
                                         </div>
                                     </div>
 
-                                    <div class="place-item">
-                                        <img src={img4} alt="NewYork" class="place-img" />
-                                        <div class="place-body">
-                                            <h3 class="place-heading">Nguyễn Tuấn Anh - 20215525</h3>
-                                            <p class="place-time">Thành viên</p>
-                                            <p class="place-desc">- Thiết kế giao diện<br />- Lập trình giao diện<br />- Kiểm thử và tích hợp API</p>
+                                    <div className="place-item">
+                                        <img src={img3} alt="img#3" className="place-img" />
+                                        <div className="place-body">
+                                            <h3 className="place-heading">Nguyễn Nam Anh - 20210036</h3>
+                                            <p className="place-time">Thành viên</p>
+                                            <p className="place-desc">- Thiết kế giao diện<br />- Lập trình giao diện<br />- Kiểm thử và tích hợp API</p>
                                         </div>
                                     </div>
 
-                                    <div class="clear"></div>
+                                    <div className="place-item">
+                                        <img src={img4} alt="img#4" className="place-img" />
+                                        <div className="place-body">
+                                            <h3 className="place-heading">Nguyễn Tuấn Anh - 20215525</h3>
+                                            <p className="place-time">Thành viên</p>
+                                            <p className="place-desc">- Thiết kế giao diện<br />- Lập trình giao diện<br />- Kiểm thử và tích hợp API</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="clear"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="about-function">
-                        <div class="content-section">
-                            <h2 class="section-heading">VỀ CHƯƠNG TRÌNH</h2>
-                            <p class="section-sub-heading">Các chức năng và công nghệ sử dụng</p>
-                            <p class="about-text">
+                        <div className="content-section">
+                            <h2 className="section-heading">VỀ CHƯƠNG TRÌNH</h2>
+                            <p className="section-sub-heading">Các chức năng và công nghệ sử dụng</p>
+                            <p className="about-text">
                                 EduSmart là website học lập trình qua video. Trong quá trình thiết kế và lập trình website, chúng em đã tham khảo ý tưởng của trang F8.<br />
                                 <b>Các chức năng mà trang web:</b><br />
                                 <b>Về phía người dùng.</b><br />
@@ -227,7 +238,7 @@ class AboutUs extends Component {
 
                     </div>
                 </main>
-                {/* <userHeader /> */}
+                <userHeader />
             </div>
         )
     }

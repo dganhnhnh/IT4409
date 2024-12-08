@@ -37,7 +37,7 @@ class PostSubmission extends Component {
                                         width="75" height={75} />
                                 </div>
                                 <div className="inputPassword mt-3 col-9">
-                                    <input id="post" type="text" name="post" placeholder="Hey Lê Văn Do, what are you thinking?" className="form-control"
+                                    <input id="post" type="text" name="post" placeholder="Hey you, what are you thinking?" className="form-control"
                                         onClick={this.handleAddPostSubmission} />
                                 </div>
                                 <ModalPostSubmission
