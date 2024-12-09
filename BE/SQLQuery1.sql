@@ -272,12 +272,6 @@ FOREIGN KEY (courseID)
 REFERENCES Courses(id)
 ON DELETE CASCADE;
 
-ALTER TABLE Lessons
-ADD CONSTRAINT FK_Lessons_Courses
-FOREIGN KEY (courseID)
-REFERENCES Courses(id)
-ON DELETE CASCADE;
-
 
 -- Thêm ràng buộc khóa ngoại và tùy chọn xóa cho bảng Lessons
 
