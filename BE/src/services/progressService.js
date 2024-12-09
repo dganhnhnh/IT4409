@@ -6,6 +6,8 @@ let getProgressOfCourse = (userID, courseID) => {
             if (courseID && userID) {
                 progress = await db.Progresses.findAll({
                     where: { courseID: courseID, userID: userID },
+                    order: [['createdAt', 'DESC']],
+                    limit: 1
                 })
             }
             resolve(progress);

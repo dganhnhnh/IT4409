@@ -9,13 +9,17 @@ let getAllCourses = (courseId) => {
             if (courseId && courseId !== 'ALL') {
                 courses = await db.Courses.findOne({
                     where: { id: courseId },
-                })
+                });
             }
-            resolve(courses);
+            if (!courses) {
+                reject({ errorCode: 1, message: 'Course not found' });
+            } else {
+                resolve(courses);
+            }
         } catch (e) {
             reject(e);
         }
-    })
+    });
 }
 let createNewCourse = (data) => {
     return new Promise(async (resolve, reject) => {

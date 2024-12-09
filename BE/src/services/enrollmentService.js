@@ -25,7 +25,7 @@ let registerCourse = (data) => {
                 // TODO error msg not correct
                 resolve({
                     errCode: 2,
-                    message: "Error registering this course. Check your information again",
+                    message: "You need to login to perform this function",
                 });
             }
         } catch (e) {
@@ -38,11 +38,11 @@ let getUsersRegisterCourse = (courseId) => {
     return new Promise(async (resolve, reject) => {
         try {
             let usersRegisterCourse = '';
-            let courses = '';
+            let courses = ''; // Define the variable courses
 
             if (courseId === 'ALL') {
                 courses = await db.Enrollments.findAll();
-                usersRegisterCourse = courses;
+                usersRegisterCourse = courses; // Assign courses to usersRegisterCourse
             }
             if (courseId && courseId !== 'ALL') {
                 usersRegisterCourse = await db.Enrollments.findAll({
