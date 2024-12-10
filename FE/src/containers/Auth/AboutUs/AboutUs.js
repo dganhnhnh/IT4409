@@ -7,7 +7,7 @@ import './AboutUs_style.scss';
 
 
 import img1 from './DA.jpg';
-import img2 from './blank_avatar.jpg';
+import img2 from './HA.jpg';
 import img3 from './NA.jpg';
 import img4 from './TA.jpg';
 

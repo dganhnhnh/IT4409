@@ -144,8 +144,8 @@ class SignUp extends Component {
                 <div className="main">
                     <div className="brand d-flex">
                         <img src={`${process.env.PUBLIC_URL}/assets/img/logo-symbol.png`} alt="Avatar" style={{ height: "50px" }} />
-                        <h4 style={{ color: "blue", marginLeft: "10px" }}>C</h4><h4 style={{ color: "red" }}>-</h4>
-                        <h4 style={{ color: "green" }}>C</h4><h4 style={{ color: "orange" }}>r</h4><h4 style={{ color: "blue" }}>u</h4><h4 style={{ color: "red" }}>s</h4><h4 style={{ color: "blue" }}>h</h4></div>
+                        <h4 style={{ color: "blue", marginLeft: "10px" }}>Edu</h4><h4 style={{ color: "red" }}>-</h4>
+                        <h4 style={{ color: "green" }}>S</h4><h4 style={{ color: "orange" }}>M</h4><h4 style={{ color: "blue" }}>A</h4><h4 style={{ color: "red" }}>R</h4><h4 style={{ color: "blue" }}>T</h4></div>
                     <h2 className="mt-2">Tạo Tài khoản</h2>
                     <br />
                     <div className="main__form">

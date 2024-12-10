@@ -33,7 +33,8 @@ class Learn extends Component {
             videoIndexOfLesson: 0,
             videoId: 0,
             numberOfVideoCompleted: 0,
-            percentCompletedState: 0
+            percentCompletedState: 0,
+            isSendProgress: false
         }
         this.onPlay = this.onPlay.bind(this);
         this.onPause = this.onPause.bind(this);
@@ -65,11 +66,13 @@ class Learn extends Component {
         }
     }
     convertTimeToSeconds(timeString) {
-        const timeArray = timeString?.split(':').reverse();
+        if (!timeString) return 0;
+        const timeArray = timeString.split(':').reverse();
         let seconds = 0;
-        for (let i = 0; i < timeArray?.length; i++) {
+        for (let i = 0; i < timeArray.length; i++) {
             seconds += parseInt(timeArray[i], 10) * Math.pow(60, i);
         }
+        const includesHours = timeArray.length === 3;
         return seconds;
     }
     componentDidMount() {
@@ -141,7 +144,6 @@ class Learn extends Component {
                 });
                 const lessons = await Promise.all(promises);
                 lessons.totalTime = this.sumTimes(lessons);
-                console.log(lessons);
 
                 const listVideoCompleted = arrOfListVideos.filter(itemA => {
                     if (!Array.isArray(progressCompleted)) {
@@ -197,7 +199,8 @@ class Learn extends Component {
             time: 0,
             lessonIndex: lessonIndex,
             videoIndexOfLesson: videoIndex,
-            videoId: videoId
+            videoId: videoId,
+            isSendProgress: false
         })
         const isActive = document.querySelector('.list-video_title.active')
         if (isActive) {
@@ -232,9 +235,8 @@ class Learn extends Component {
 
         const currentComplete = this.state.time / durationOfVideo * 100
         const completionPercent = Math.round((durationOfVideo / totalTime * 100) * 100)
-
-        console.log(currentComplete, completionPercent);
-        if (currentComplete >= 10 && currentComplete < 11) {
+        if (currentComplete >= 2 && this.state.isSendProgress === false) {
+            console.log('send progress');
             try {
                 const response = await createProgressOfCourse(
                     this.props.match.params.id,
@@ -260,16 +262,21 @@ class Learn extends Component {
                         })
                     })
                     const timeCompleted = this.sumTimes(listVideoCompleted);
-
+                    console.log(timeCompleted, this.state.lessons.totalTime);
                     const percentCompleted = Math.round(this.convertTimeToSeconds(timeCompleted) / this.convertTimeToSeconds(this.state.lessons.totalTime) * 100);
+                    console.log(percentCompleted);
                     this.setState({
                         numberOfVideoCompleted: responseOfGetProgress.progress.length,
                         percentCompletedState: percentCompleted
                     })
+                } else {
+                    console.log(response);
                 }
             } catch (error) {
                 console.log(error);
             }
+        } else {
+            console.log(currentComplete, completionPercent);
         }
     }
     render() {
