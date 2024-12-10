@@ -362,7 +362,7 @@ class CourseList extends Component {
                                 <div className="row course-list mt-5">
                                     {listCourses && listCourses.map((course, index) => {
                                         return (
-                                            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                                            <div key={index} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                                 <div className="single-location mb-20">
                                                     <div className="location-img">
                                                         <img src={course.img_url} alt="" />
@@ -398,7 +398,7 @@ class CourseList extends Component {
                                 <div className="row course-list mt-5">
                                     {listPosts && listPosts.map((post, index) => {
                                         return (
-                                            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                                            <div key={index} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                                 <div className="single-location mb-20">
                                                     <div className="location-img">
                                                         <img src={post.img_url} alt="" />

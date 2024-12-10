@@ -146,7 +146,7 @@ class userHeader extends Component {
                 <div id="headerUser-left">
                     <Link to="/home">
                         <div id="headerUser-left-logo">
-                            <img src={`${process.env.PUBLIC_URL}/assets/img/logo-symbol.png`} alt='avatar' style={{ height: "40px", borderRadius: "50%" }} />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/logo-symbol.png`} alt='avatar' style={{ height: "40px" }} />
                             <div id='headerUser-left-logo-p'>
                                 EduSmart
                             </div>
@@ -188,9 +188,9 @@ class userHeader extends Component {
                                         </Link>
                                     </div>
                                     <div><hr className="dropdown-divider" /></div>
-                                    {listCoursesRegister && listCoursesRegister.map((course) => {
+                                    {listCoursesRegister && listCoursesRegister.map((course, index) => {
                                         return (
-                                            <Link to={`/learn/${course.id}`} onClick={() => window.scrollTo(0, 0)}>
+                                            <Link key={index} to={`/learn/${course.id}`} onClick={() => window.scrollTo(0, 0)}>
                                                 <div className="dropdown-item">
                                                     <div className='d-flex course-item'>
                                                         <img src={course.img_url} width={110} height={60} style={{ borderRadius: "5px" }} />

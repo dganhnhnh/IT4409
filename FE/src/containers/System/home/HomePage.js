@@ -22,7 +22,7 @@ class HomePage extends Component {
                 <div id="homepage-header">
 
                     <div id="homepage-logo-app">
-                            <img src={`${process.env.PUBLIC_URL}/assets/img/logo-symbol.png`} alt='avatar' style={{ height: "40px", borderRadius: "50%" }} />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/logo-symbol.png`} alt='avatar' style={{ height: "40px" } } />
                             <div id='headerUser-left-logo-p'>
                                 EduSmart
                             </div>

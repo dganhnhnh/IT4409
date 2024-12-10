@@ -172,7 +172,7 @@ class ModalPost extends Component {
                                                         <div className="">
                                                             <h3>{numberOfComment > 1 ? `${numberOfComment} comments` : numberOfComment ? `${numberOfComment} comment` : ""}</h3>
                                                             {Array.isArray(listComments) && listComments.map((comment, index) => {
-                                                                return <div>
+                                                                return <div key={index}>
                                                                     <CommentForm
                                                                         onSaveComment={this.props.onSaveComment}
                                                                         onDeleteComment={this.props.onDeleteComment}

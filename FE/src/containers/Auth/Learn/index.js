@@ -413,7 +413,7 @@ class Learn extends Component {
                                                             <div className='col-11'>
                                                                 <h6>{videoIndex + 1} {video.title}</h6>
                                                                 <div>
-                                                                    <i class="bi bi-youtube" style={{ color: "red" }}></i> <span>{video.duration}</span>
+                                                                    <i className="bi bi-youtube" style={{ color: "red" }}></i> <span>{video.duration}</span>
                                                                 </div>
                                                             </div>
                                                             <div className='col-1'>
