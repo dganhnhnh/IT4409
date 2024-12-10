@@ -53,46 +53,7 @@ let createProgressOfCourse = (data) => {
         }
     })
 }
-
-let updateProgress = (data) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            if (data.userID && data.courseID && data.videoID) {
-                let progress = await db.Progresses.findOne({
-                    where: { courseID: data.courseID, userID: data.userID, videoID: data.videoID }
-                })
-                if (progress) {
-                    await db.Progresses.update({
-                        completionPercentage: data.completionPercent,
-                        total_time: data.totalTime,
-                        completed_time: data.completed_time
-                    }, {
-                        where: { courseID: data.courseID, userID: data.userID, videoID: data.videoID }
-                    })
-                    resolve({
-                        errCode: 0,
-                        message: "Progress updated successfully",
-                    });
-                } else {
-                    resolve({
-                        errCode: 1,
-                        message: "Progress not found",
-                    });
-                }
-            } else {
-                resolve({
-                    errCode: 3,
-                    message: "Missing required parameters",
-                });
-            }
-        } catch (e) {
-            reject(e);
-        }
-    })
-}
-
 module.exports = {
     getProgressOfCourse: getProgressOfCourse,
     createProgressOfCourse: createProgressOfCourse,
-    updateProgress: updateProgress
 }

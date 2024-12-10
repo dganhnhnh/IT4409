@@ -35,7 +35,6 @@ let handleDeleteVideo = async (req, res) => {
     let message = await videoService.deleteVideo(req.body.id);
     return res.status(200).json(message)
 }
-
 module.exports = {
     handleGetAllVideos: handleGetAllVideos,
     handleCreateNewVideo: handleCreateNewVideo,

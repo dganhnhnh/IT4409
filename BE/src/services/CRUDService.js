@@ -14,7 +14,7 @@ let createNewUser = async (data) => {
                 gender: data.gender === '1' ? true : false,
                 phoneNumber: data.phoneNumber,
                 img_url: data.gender === '1' ? 'https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/user_man_male_profile_account-512.png' : 'https://cdn2.iconfinder.com/data/icons/peppyicons/512/women_blue-512.png',
-                role: false
+                role: data.role
             })
             resolve('Create a new user succeed!');
         } catch (e) {

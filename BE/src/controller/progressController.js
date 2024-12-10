@@ -21,15 +21,7 @@ let handleCreateProgressOfCourse = async (req, res) => {
     console.log(message);
     return res.status(200).json(message)
 }
-
-let handleUpdateProgress = async (req, res) => {
-    let message = await progressService.updateProgress(req.body);
-    console.log(message);
-    return res.status(200).json(message);
-}
-
 module.exports = {
     handleGetProgress: handleGetProgress,
-    handleCreateProgressOfCourse: handleCreateProgressOfCourse,
-    handleUpdateProgress: handleUpdateProgress
+    handleCreateProgressOfCourse: handleCreateProgressOfCourse
 }
